@@ -37,13 +37,13 @@ else
   warn "nvm — not found at ~/.nvm (optional)"
 fi
 
-# tfenv check (only relevant on macOS)
-if [[ "$(uname)" == "Darwin" ]]; then
-  if check tfenv; then
-    ok "tfenv"
-  else
-    warn "tfenv — not installed (optional)"
-  fi
+echo "\nChecking optional work dependencies (GoGuardian)...\n"
+
+# tfenv — work dependency
+if check tfenv; then
+  ok "tfenv"
+else
+  warn "tfenv — not installed (work dependency)"
 fi
 
 if [[ $missing -gt 0 ]]; then
