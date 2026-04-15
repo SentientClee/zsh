@@ -68,6 +68,12 @@ if [[ ! -f "$ZSH_CONFIG_DIR/secrets.zsh" ]]; then
   warn "Created secrets.zsh from example — fill in your values at $ZSH_CONFIG_DIR/secrets.zsh"
 fi
 
+# Set up work.zsh if missing
+if [[ ! -f "$ZSH_CONFIG_DIR/work.zsh" ]]; then
+  cp "$ZSH_CONFIG_DIR/work.zsh.example" "$ZSH_CONFIG_DIR/work.zsh"
+  warn "Created work.zsh from example — fill in your values at $ZSH_CONFIG_DIR/work.zsh"
+fi
+
 # Write ~/.zshrc
 cat > "$ZSHRC" <<'EOF'
 for f in ~/.config/zsh/*.zsh; do

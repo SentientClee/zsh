@@ -1,0 +1,12 @@
+# Work-specific config — copy to work.zsh and fill in values
+
+# Environment variables
+# export WORK_VAR=value
+
+# Directory shortcuts
+# alias cdw="cd ~/work"
+
+# Tool aliases (e.g. Rosetta wrapper on Apple Silicon)
+# if [[ "$(uname)" == "Darwin" ]] && [[ "$(uname -m)" == "arm64" ]]; then
+#   alias sometool='arch -x86_64 sometool'
+# fi

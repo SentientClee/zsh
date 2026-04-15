@@ -10,7 +10,7 @@ Modular zsh configuration living at `~/.config/zsh/`, sourced by a minimal `~/.z
 | `exports.zsh` | Environment variables and PATH |
 | `completion.zsh` | Completion settings |
 | `plugins.zsh` | Starship, zoxide, nvm |
-| `work.zsh` | GoGuardian-specific config |
+| `work.zsh` | Work-specific config (gitignored — copy from `work.zsh.example`) |
 | `secrets.zsh` | Secrets (gitignored — copy from `secrets.zsh.example`) |
 
 ## Install
