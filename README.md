@@ -31,6 +31,4 @@ cp ~/.config/zsh/secrets.zsh.example ~/.config/zsh/secrets.zsh
 
 ## Dependencies
 
-Required: `zsh`, `nvim`, `git`, `starship`, `zoxide`, `eza`, `bat`, `nvm`
-
-Optional (work): `tfenv`
+Required: `zsh`, `nvim`, `git`, `starship`, `zoxide`, `eza`, `bat`

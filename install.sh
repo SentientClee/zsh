@@ -30,22 +30,6 @@ for dep in "${deps[@]}"; do
   fi
 done
 
-# nvm check (not a binary, check the directory)
-if [[ -d "$HOME/.nvm" ]]; then
-  ok "nvm"
-else
-  warn "nvm — not found at ~/.nvm (optional)"
-fi
-
-echo "\nChecking optional work dependencies (GoGuardian)...\n"
-
-# tfenv — work dependency
-if check tfenv; then
-  ok "tfenv"
-else
-  warn "tfenv — not installed (work dependency)"
-fi
-
 if [[ $missing -gt 0 ]]; then
   echo "\n${RED}$missing required dependency/dependencies missing. Install them before continuing.${NC}"
   exit 1
