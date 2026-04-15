@@ -1,7 +1,7 @@
-# Work-specific config — copy to work.zsh and fill in values
+# Machine-specific config — copy to machine.zsh and fill in values
 
 # Environment variables
-# export WORK_VAR=value
+# export SOME_VAR=value
 
 # Directory shortcuts
 # alias cdw="cd ~/work"

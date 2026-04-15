@@ -71,10 +71,10 @@ if [[ ! -f "$ZSH_CONFIG_DIR/secrets.zsh" ]]; then
   warn "Created secrets.zsh from example — fill in your values at $ZSH_CONFIG_DIR/secrets.zsh"
 fi
 
-# Set up work.zsh if missing
-if [[ ! -f "$ZSH_CONFIG_DIR/work.zsh" ]]; then
-  cp "$ZSH_CONFIG_DIR/work.zsh.example" "$ZSH_CONFIG_DIR/work.zsh"
-  warn "Created work.zsh from example — fill in your values at $ZSH_CONFIG_DIR/work.zsh"
+# Set up machine.zsh if missing
+if [[ ! -f "$ZSH_CONFIG_DIR/machine.zsh" ]]; then
+  cp "$ZSH_CONFIG_DIR/machine.zsh.example" "$ZSH_CONFIG_DIR/machine.zsh"
+  warn "Created machine.zsh from example — fill in your values at $ZSH_CONFIG_DIR/machine.zsh"
 fi
 
 # Write ~/.zshrc

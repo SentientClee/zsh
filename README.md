@@ -11,7 +11,7 @@ Modular zsh configuration living at `~/.config/zsh/`, sourced by a minimal `~/.z
 | `history.zsh` | History settings |
 | `completion.zsh` | Completion settings |
 | `plugins.zsh` | Starship, fzf, zoxide |
-| `work.zsh` | Work-specific config (gitignored — copy from `work.zsh.example`) |
+| `machine.zsh` | Machine-specific config (gitignored — copy from `machine.zsh.example`) |
 | `secrets.zsh` | Secrets (gitignored — copy from `secrets.zsh.example`) |
 
 ## Install
