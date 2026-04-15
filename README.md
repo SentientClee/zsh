@@ -8,8 +8,9 @@ Modular zsh configuration living at `~/.config/zsh/`, sourced by a minimal `~/.z
 |------|---------|
 | `aliases.zsh` | Shell aliases |
 | `exports.zsh` | Environment variables and PATH |
+| `history.zsh` | History settings |
 | `completion.zsh` | Completion settings |
-| `plugins.zsh` | Starship, zoxide, nvm |
+| `plugins.zsh` | Starship, zoxide |
 | `work.zsh` | Work-specific config (gitignored — copy from `work.zsh.example`) |
 | `secrets.zsh` | Secrets (gitignored — copy from `secrets.zsh.example`) |
 
