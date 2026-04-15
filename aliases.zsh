@@ -19,4 +19,4 @@ alias la='eza -lA --icons --group-directories-first --no-user'
 alias grep='grep --color=auto'
 
 # cat -> bat
-alias cat='bat --paging=never'
+alias cat='bat --paging=never --style=plain'

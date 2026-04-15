@@ -10,7 +10,7 @@ Modular zsh configuration living at `~/.config/zsh/`, sourced by a minimal `~/.z
 | `exports.zsh` | Environment variables and PATH |
 | `history.zsh` | History settings |
 | `completion.zsh` | Completion settings |
-| `plugins.zsh` | Starship, zoxide |
+| `plugins.zsh` | Starship, fzf, zoxide |
 | `work.zsh` | Work-specific config (gitignored — copy from `work.zsh.example`) |
 | `secrets.zsh` | Secrets (gitignored — copy from `secrets.zsh.example`) |
 
@@ -32,4 +32,4 @@ cp ~/.config/zsh/secrets.zsh.example ~/.config/zsh/secrets.zsh
 
 ## Dependencies
 
-Required: `zsh`, `nvim`, `git`, `starship`, `zoxide`, `eza`, `bat`
+Required: `zsh`, `nvim`, `git`, `starship`, `zoxide`, `eza`, `bat`, `fzf`

@@ -18,7 +18,7 @@ fail() { echo "${RED}[missing]${NC} $1"; }
 
 echo "\nChecking dependencies...\n"
 
-deps=(zsh nvim git starship zoxide eza bat)
+deps=(zsh nvim git starship zoxide eza bat fzf)
 missing=0
 
 for dep in "${deps[@]}"; do
@@ -45,6 +45,25 @@ else
   echo "Cloning config to $ZSH_CONFIG_DIR..."
   git clone "$REPO" "$ZSH_CONFIG_DIR"
 fi
+
+# Clone or update plugins
+plugins=(
+  https://github.com/zsh-users/zsh-autosuggestions.git
+  https://github.com/zsh-users/zsh-syntax-highlighting.git
+)
+
+mkdir -p "$ZSH_CONFIG_DIR/plugins"
+for repo in "${plugins[@]}"; do
+  name="${repo:t:r}"
+  dir="$ZSH_CONFIG_DIR/plugins/$name"
+  if [[ -d "$dir/.git" ]]; then
+    git -C "$dir" pull --quiet
+    ok "$name (updated)"
+  else
+    git clone --quiet "$repo" "$dir"
+    ok "$name (cloned)"
+  fi
+done
 
 # Set up secrets.zsh if missing
 if [[ ! -f "$ZSH_CONFIG_DIR/secrets.zsh" ]]; then
