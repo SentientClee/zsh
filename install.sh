@@ -18,7 +18,7 @@ fail() { echo "${RED}[missing]${NC} $1"; }
 
 echo "\nChecking dependencies...\n"
 
-deps=(zsh nvim git starship zoxide eza bat fzf)
+deps=(zsh nvim git zoxide eza bat fzf)
 missing=0
 
 for dep in "${deps[@]}"; do
@@ -29,6 +29,23 @@ for dep in "${deps[@]}"; do
     missing=$((missing + 1))
   fi
 done
+
+p10k_paths=(
+  /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
+  /usr/local/share/powerlevel10k/powerlevel10k.zsh-theme
+  /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+  "$HOME/powerlevel10k/powerlevel10k.zsh-theme"
+)
+p10k_found=0
+for p in "${p10k_paths[@]}"; do
+  [[ -f "$p" ]] && p10k_found=1 && break
+done
+if (( p10k_found )); then
+  ok "powerlevel10k"
+else
+  fail "powerlevel10k (install via Homebrew, your distro package manager, or git clone to ~/powerlevel10k)"
+  missing=$((missing + 1))
+fi
 
 if [[ $missing -gt 0 ]]; then
   echo "\n${RED}$missing required dependency/dependencies missing. Install them before continuing.${NC}"
@@ -79,6 +96,9 @@ fi
 
 # Write ~/.zshrc
 cat > "$ZSHRC" <<'EOF'
+# Sources every *.zsh file in ~/.config/zsh in alphabetical order. Prefix a
+# file with `00-` to force it to load first (e.g. for p10k instant prompt,
+# which requires silence before it runs).
 for f in ~/.config/zsh/*.zsh; do
   [[ -r "$f" ]] && source "$f"
 done

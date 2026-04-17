@@ -1,5 +1,3 @@
-eval "$(starship init zsh)"
-
 eval "$(fzf --zsh)"
 
 source ~/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
