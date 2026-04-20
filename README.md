@@ -10,7 +10,8 @@ Modular zsh configuration living at `~/.config/zsh/`, sourced by a minimal `~/.z
 | `exports.zsh` | Environment variables and PATH |
 | `history.zsh` | History settings |
 | `completion.zsh` | Completion settings |
-| `plugins.zsh` | Starship, fzf, zoxide |
+| `plugins.zsh` | fzf, zsh-autosuggestions, zsh-syntax-highlighting, zoxide |
+| `prompt.zsh` | Custom prompt; git info via gitstatusd |
 | `machine.zsh` | Machine-specific config (gitignored — copy from `machine.zsh.example`) |
 | `secrets.zsh` | Secrets (gitignored — copy from `secrets.zsh.example`) |
 
@@ -32,4 +33,6 @@ cp ~/.config/zsh/secrets.zsh.example ~/.config/zsh/secrets.zsh
 
 ## Dependencies
 
-Required: `zsh`, `nvim`, `git`, `starship`, `zoxide`, `eza`, `bat`, `fzf`
+Required: `zsh`, `nvim`, `git`, `zoxide`, `eza`, `bat`, `fzf`, plus [gitstatus](https://github.com/romkatv/gitstatus) for the prompt.
+
+Install gitstatus via `brew install gitstatus`, your distro's package manager, or clone to `~/gitstatus`. It ships a daemon (not in `$PATH`) and a zsh plugin that `prompt.zsh` sources.
