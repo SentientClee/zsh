@@ -24,6 +24,23 @@ alias gl='git pull'
 alias gp='git push'
 alias gst='git status'
 alias gb='git branch'
+# git switch wrapper. No args → fzf picker over local + remote branches,
+# locals listed first so they appear nearest the cursor (fzf's default
+# layout puts first input items at the bottom, closest to the prompt).
+# Dedups remotes whose name matches a local branch. DWIM creates a local
+# tracking branch when a remote-only name is picked.
+gsw() {
+    if (( $# == 0 )); then
+        local branch=$(
+            {
+                git for-each-ref --format='%(refname:short)' refs/heads/ 2>/dev/null | sort
+                git for-each-ref --format='%(refname:lstrip=3)' refs/remotes/ 2>/dev/null | grep -v '^HEAD$' | sort -u
+            } | awk '!seen[$0]++' | fzf
+        ) || return
+        set -- "$branch"
+    fi
+    git switch "$@"
+}
 
 # ls
 alias ls='eza --icons --group-directories-first --no-user'
