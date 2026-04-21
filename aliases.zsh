@@ -17,7 +17,7 @@ bindkey -M isearch . self-insert
 
 # git
 alias ga='git add'
-alias gc='git commit'
+alias gc='git commit -v'
 alias gco='git checkout'
 alias gd='git diff'
 alias gl='git pull'
