@@ -9,11 +9,14 @@ for p in \
 done
 
 if typeset -f gitstatus_start >/dev/null; then
-    gitstatus_stop 'MY' 2>/dev/null
-    gitstatus_start 'MY'
+    gitstatus_stop 'PROMPT' 2>/dev/null
+    # -s/-u/-c/-d set the max reported counts for staged/unstaged/commits/dirty.
+    # Defaults cap at 1 (faster scans in huge repos, but indicators would
+    # plateau at 1). -1 means unlimited — accurate counts.
+    gitstatus_start -s -1 -u -1 -c -1 -d -1 'PROMPT'
 
     _update_git_info() {
-        if ! gitstatus_query 'MY' || [[ $VCS_STATUS_RESULT != 'ok-sync' ]]; then
+        if ! gitstatus_query 'PROMPT' || [[ $VCS_STATUS_RESULT != 'ok-sync' ]]; then
             GIT_INFO=""
             return
         fi
