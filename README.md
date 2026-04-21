@@ -23,14 +23,6 @@ curl -fsSL https://raw.githubusercontent.com/SentientClee/zsh/main/install.sh | 
 
 The install script checks for required dependencies, clones this repo to `~/.config/zsh/`, creates `secrets.zsh` from the example template, and writes `~/.zshrc`.
 
-## Secrets
-
-Copy `secrets.zsh.example` to `secrets.zsh` and fill in values:
-
-```zsh
-cp ~/.config/zsh/secrets.zsh.example ~/.config/zsh/secrets.zsh
-```
-
 ## Dependencies
 
 Required: `zsh`, `nvim`, `git`, `zoxide`, `eza`, `bat`, `fzf`, plus [gitstatus](https://github.com/romkatv/gitstatus) for the prompt.
